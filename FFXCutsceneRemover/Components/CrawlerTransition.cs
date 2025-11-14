@@ -48,15 +48,15 @@ class CrawlerTransition : Transition
 
             Transition actorPositions;
             //Position Party Member 1
-            actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { (short)(formation[0] + 1) }, Target_x = 97.75f, Target_y = 0.0f, Target_z = -451.00f };
+            actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { (short)(formation[0] + 1) }, Target_x = 97.75f, Target_y = 0.0f, Target_z = -451.00f };
             actorPositions.Execute();
 
             //Position Party Member 2
-            actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { (short)(formation[1] + 1) }, Target_x = 112.25f, Target_y = 0.0f, Target_z = -425.75f };
+            actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { (short)(formation[1] + 1) }, Target_x = 112.25f, Target_y = 0.0f, Target_z = -425.75f };
             actorPositions.Execute();
 
             //Position Party Member 3
-            actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { (short)(formation[2] + 1) }, Target_x = 135.25f, Target_y = 0.0f, Target_z = -405.50f };
+            actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { (short)(formation[2] + 1) }, Target_x = 135.25f, Target_y = 0.0f, Target_z = -405.50f };
             actorPositions.Execute();
             Stage += 1;
         }

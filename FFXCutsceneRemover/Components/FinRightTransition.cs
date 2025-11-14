@@ -24,7 +24,7 @@ class FinRightTransition : Transition
         {
             Transition actorPositions;
             //Position Sin
-            actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 4233 }, Target_x = -1205.0f, Target_y = -440.0f, Target_z = 428.0f };
+            actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 4233 }, Target_x = -1205.0f, Target_y = -440.0f, Target_z = 428.0f };
             actorPositions.Execute();
 
             Stage += 1;

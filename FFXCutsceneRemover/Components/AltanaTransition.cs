@@ -32,15 +32,15 @@ class AltanaTransition : Transition
 
                 Transition actorPositions;
                 //Position Party Member 1
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { (short)(formation[0] + 1) }, Target_x = 998.0f, Target_y = -30.0f, Target_z = -1474.0f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { (short)(formation[0] + 1) }, Target_x = 998.0f, Target_y = -30.0f, Target_z = -1474.0f };
                 actorPositions.Execute();
 
                 //Position Party Member 2
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { (short)(formation[1] + 1) }, Target_x = 998.0f, Target_y = -30.0f, Target_z = -1444.0f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { (short)(formation[1] + 1) }, Target_x = 998.0f, Target_y = -30.0f, Target_z = -1444.0f };
                 actorPositions.Execute();
 
                 //Position Party Member 3
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { (short)(formation[2] + 1) }, Target_x = 998.0f, Target_y = -30.0f, Target_z = -1414.0f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { (short)(formation[2] + 1) }, Target_x = 998.0f, Target_y = -30.0f, Target_z = -1414.0f };
                 actorPositions.Execute();
 
                 Stage += 1;
@@ -68,7 +68,7 @@ class AltanaTransition : Transition
             {
                 Transition actorPositions;
                 //Position Tidus
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 1 }, Target_x = 529.320f, Target_y = -30.0f, Target_z = -830.060f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 1 }, Target_x = 529.320f, Target_y = -30.0f, Target_z = -830.060f };
                 actorPositions.Execute();
 
                 Stage = 99;

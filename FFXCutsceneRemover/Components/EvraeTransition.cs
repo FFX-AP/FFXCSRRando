@@ -29,7 +29,7 @@ class EvraeTransition : Transition
 
             Transition actorPositions;
             //Position Tidus
-            actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 4215 }, Target_x = -140.0f, Target_y = -35.0f, Target_z = 80.0f };
+            actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 4215 }, Target_x = -140.0f, Target_y = -35.0f, Target_z = 80.0f };
             actorPositions.Execute();
 
             Stage += 1;

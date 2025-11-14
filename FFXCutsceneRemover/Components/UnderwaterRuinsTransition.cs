@@ -24,11 +24,11 @@ class UnderwaterRuinsTransition : Transition
             {
                 Transition actorPositions;
                 //Position ??? (Rikku)
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 41 }, Target_x = 75.648f, Target_y = 6.306f, Target_z = 16.575f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 41 }, Target_x = 75.648f, Target_y = 6.306f, Target_z = 16.575f };
                 actorPositions.Execute();
 
                 //Position Tros
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 4197 }, Target_y = -100.0f};
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 4197 }, Target_y = -100.0f};
                 actorPositions.Execute();
 
                 Stage += 1;

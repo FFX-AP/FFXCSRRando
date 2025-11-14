@@ -21,7 +21,7 @@ class AmmesTransition : Transition
         {
             Transition actorPositions;
             //Position Ammes
-            actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 4255 }, Target_x = 843.5f, Target_y = -42.0f, Target_z = -126.7f };
+            actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 4255 }, Target_x = 843.5f, Target_y = -42.0f, Target_z = -126.7f };
             actorPositions.Execute();
 
             WriteValue<int>(MemoryWatchers.AmmesTransition, BaseCutsceneValue + 0x9936);// 2AB , 255 , 21A
@@ -42,10 +42,10 @@ class AmmesTransition : Transition
         {
             Transition actorPositions;
             //Position Tidus
-            actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 1 }, Target_x = 749.636f, Target_y = -41.589f, Target_z = -71.674f };
+            actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 1 }, Target_x = 749.636f, Target_y = -41.589f, Target_z = -71.674f };
             actorPositions.Execute();
             //Position Ammes
-            actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 4255 }, Target_x = 843.5f, Target_y = -42.0f, Target_z = -126.7f };
+            actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 4255 }, Target_x = 843.5f, Target_y = -42.0f, Target_z = -126.7f };
             actorPositions.Execute();
 
             Stage += 1;

@@ -23,15 +23,15 @@ class WendigoTransition : Transition
 
                 Transition actorPositions;
                 //Position Party Members off screen
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, PositionPartyOffScreen = true, PartyTarget_x = 205.0f, PartyTarget_z = -480.0f };
+                actorPositions = new Transition { ForceLoad = false, PositionPartyOffScreen = true, PartyTarget_x = 205.0f, PartyTarget_z = -480.0f };
                 actorPositions.Execute();
 
                 //Position Guados
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 4309 }, Target_x = -100.0f, Target_z = -350.0f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 4309 }, Target_x = -100.0f, Target_z = -350.0f };
                 actorPositions.Execute();
 
                 //Position Wendigo
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 4308 }, Target_x = -100.0f, Target_z = -350.0f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 4308 }, Target_x = -100.0f, Target_z = -350.0f };
                 actorPositions.Execute();
 
                 Stage += 1;

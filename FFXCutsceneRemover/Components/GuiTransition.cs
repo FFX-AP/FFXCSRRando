@@ -42,7 +42,7 @@ class GuiTransition : Transition
             }.Execute();
 
             // Reposition Party Members just off screen to run into battle
-            Transition actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, PartyTarget_x = 427.0f, PartyTarget_z = 3350.0f, PositionPartyOffScreen = true };
+            Transition actorPositions = new Transition { ForceLoad = false, PartyTarget_x = 427.0f, PartyTarget_z = 3350.0f, PositionPartyOffScreen = true };
             actorPositions.Execute();
 
             Stage += 1;

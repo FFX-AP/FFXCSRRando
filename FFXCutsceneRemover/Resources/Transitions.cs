@@ -164,7 +164,7 @@ static class Transitions
         //  new InsideSinTransition {ForceLoad = false, Description = "Inside Sin", Suspendable = false, Repeatable = true} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 384 && MemoryWatchers.Storyline.Current == 20 && MemoryWatchers.Dialogue1.Current == 3; },
-            new Transition { ForceLoad = false, MenuValue1 = 0, MenuValue2 = 0, Description = "Fix menu bug", ConsoleOutput = false} },
+            new Transition { ForceLoad = false, MenuValue1 = 0, MenuValue2 = 0, Description = "Fix menu bug"} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 384 && MemoryWatchers.Storyline.Current == 20 && MemoryWatchers.State.Current == 0; },
             new Transition { RoomNumber = 385, Description = "Tidus swimming looking at himself as a child"} },
@@ -178,7 +178,7 @@ static class Transitions
             new Transition { RoomNumber = 48, Storyline = 42, SpawnPoint = 1, PositionTidusAfterLoad = true, Target_x = 116.063f, Target_y = -92.497f, Target_z = -448.592f, Target_var1 = 43, Description = "Tidus wakes up"} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 48 && MemoryWatchers.Storyline.Current == 42; },
-            new Transition { ForceLoad = false, TargetActorIDs = new short[] { 0x01 }, Target_x = 57.642f, Target_z = -480.248f, Target_var1 = 810, ConsoleOutput = false, Description = "Tidus wakes up - Reposition"} },
+            new Transition { ForceLoad = false, TargetActorIDs = new short[] { 0x01 }, Target_x = 57.642f, Target_z = -480.248f, Target_var1 = 810, Description = "Tidus wakes up - Reposition"} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 49 && MemoryWatchers.Storyline.Current == 42; },
             DiveTransition },
@@ -237,7 +237,7 @@ static class Transitions
             new Transition { RoomNumber = 71, Storyline = 100, SpawnPoint = 0, PositionTidusAfterLoad = true, Target_x = -40.772f, Target_y = 0.0f, Target_z = -20.171f, Target_rot = 0.0f, Target_var1 = 180, Description = "Tidus gets back onto the boat"} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 71 && MemoryWatchers.Storyline.Current == 100; },
-            new RikkuNameTransition { ForceLoad = false, ConsoleOutput = false } },
+            new RikkuNameTransition { ForceLoad = false } },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 71 && MemoryWatchers.Storyline.Current == 100 && MemoryWatchers.State.Current == 1; },
             new Transition { RoomNumber = 70, Storyline = 110, Description = "Rikku suggests going to Luca"} },
@@ -248,7 +248,7 @@ static class Transitions
             new Transition { Storyline = 116, SpawnPoint = 0, PositionTidusAfterLoad = true, Target_x = 64.785f, Target_y = -5.037f, Target_z = -73.665f, Target_var1 = 86, Description = "Tidus wakes up in the sea"} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 70 && MemoryWatchers.Storyline.Current == 116; },
-            new Transition { ForceLoad = false, PositionTidusAfterLoad = true, Target_x = -184.754f, Target_y = 26.5f, Target_z = -46.699f, Target_rot = -1.821f, Target_var1 = 393, ConsoleOutput = false, Description = "Tidus wakes up in the sea - Reposition"} },
+            new Transition { ForceLoad = false, PositionTidusAfterLoad = true, Target_x = -184.754f, Target_y = 26.5f, Target_z = -46.699f, Target_rot = -1.821f, Target_var1 = 393, Description = "Tidus wakes up in the sea - Reposition"} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 41 && MemoryWatchers.Storyline.Current == 119; },
             new LagoonTransition {ForceLoad = false, Description = "Lagoon", Suspendable = false, Repeatable = true} },
@@ -393,7 +393,7 @@ static class Transitions
         //    () => { return MemoryWatchers.RoomNumber.Current == 44 && MemoryWatchers.Storyline.Current == 338; },
         //    KilikaElevatorTransition },
         //{ () => { return MemoryWatchers.RoomNumber.Current == 108 && MemoryWatchers.Storyline.Current == 340; },
-        //  new KilikaTrialsTransition {ForceLoad = false, ConsoleOutput = false, Description = "Camera Pan", Suspendable = false, Repeatable = true} }, // Camera pan inside the trials -Doesn't work yet
+        //  new KilikaTrialsTransition {ForceLoad = false, Description = "Camera Pan", Suspendable = false, Repeatable = true} }, // Camera pan inside the trials -Doesn't work yet
         {
             () => { return MemoryWatchers.RoomNumber.Current == 45 && MemoryWatchers.Storyline.Current == 340; },
             new KilikaAntechamberTransition { ForceLoad = false, Description = "Guardians are annoyed at Tidus", Suspendable = false, Repeatable = true }  },
@@ -463,7 +463,7 @@ static class Transitions
             new Transition { Storyline = 455, SpawnPoint = 1, PositionTidusAfterLoad = true, Target_x = 74.378f, Target_y = -49.984f, Target_z = 10.625f, Target_rot = 0.0f, Target_var1 = 98, Description = "Crowd mob Yuna"} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 77 && MemoryWatchers.Storyline.Current == 455; },
-            new Transition { ForceLoad = false, TargetActorIDs = new short[] { 2 }, Target_x = 81.469f, Target_y = -49.984f, Target_z = 10.779f, Target_rot = 3.054f, Target_var1 = 98, ConsoleOutput = false, Description = "Crowd mob Yuna"} },
+            new Transition { ForceLoad = false, TargetActorIDs = new short[] { 2 }, Target_x = 81.469f, Target_y = -49.984f, Target_z = 10.779f, Target_rot = 3.054f, Target_var1 = 98, Description = "Crowd mob Yuna 2"} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 104 && MemoryWatchers.Storyline.Current == 455 && MemoryWatchers.LucaFlag2.Current == 0; },
             new Transition { LucaFlag2 = 2, ForceLoad = false, PositionTidusAfterLoad = true, Target_x = 18.981f, Target_y = 4.984f, Target_z = -76.611f, Target_rot = 2.764f, Target_var1 = 299, Description = "Tidus and Yuna talk about Luca"} },
@@ -491,7 +491,7 @@ static class Transitions
             new Transition { RoomNumber = 88, Storyline = 500, LucaFlag = 9, SpawnPoint = 2, PositionTidusAfterLoad = true, Target_x = 35.235f, Target_y = 0.363f, Target_z = -312.158f, Target_rot = 0.523f, Target_var1 = 3, Description = "Wakka takes a beating"} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 88 && MemoryWatchers.Storyline.Current == 500; },
-            new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] {0x04, 0x06}, Target_x = 0, Target_y = 0, Target_z = 0} }, // Hide Kimahri and Lulu Models
+            new Transition { ForceLoad = false, TargetActorIDs = new short[] {0x04, 0x06}, Target_x = 0, Target_y = 0, Target_z = 0} }, // Hide Kimahri and Lulu Models
         {
             () => { return MemoryWatchers.RoomNumber.Current == 299 && MemoryWatchers.Storyline.Current == 502; },
             new Transition { RoomNumber = 113, Storyline = 502, Description = "They jump on the boat"} },
@@ -521,7 +521,7 @@ static class Transitions
             new Transition { RoomNumber = 250, Storyline = 565, Description = "Fans are getting impatient"} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 124 && MemoryWatchers.Storyline.Current == 562; },
-            new Transition { RoomNumber = 250, Storyline = 565, Description = "Fans are getting impatient"} },
+            new Transition { RoomNumber = 250, Storyline = 565, Description = "Fans are getting impatient 2"} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 250 && MemoryWatchers.Storyline.Current == 565; },
             new Transition { RoomNumber = 124, Storyline = 575, Description = "Wakka chants"} },

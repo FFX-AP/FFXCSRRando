@@ -73,7 +73,7 @@ public class Program
 
     private static bool newGameSetUp = false;
 
-    //private static readonly BreakTransition BreakTransition = new BreakTransition { ForceLoad = false, Description = "Break Setup", ConsoleOutput = false, Suspendable = false, Repeatable = true };
+    //private static readonly BreakTransition BreakTransition = new BreakTransition { ForceLoad = false, Description = "Break Setup", Suspendable = false, Repeatable = true };
 
     /*private static bool seedInjected = false;
     private static uint seedSubmitted;
@@ -490,7 +490,7 @@ public class Program
                         ($"Start Game?", startGameIndents[4])
                     };
 
-                    new NewGameTransition { ForceLoad = false, ConsoleOutput = false, startGameText = startGameText }.Execute();
+                    new NewGameTransition { ForceLoad = false, startGameText = startGameText }.Execute();
 
                     newGameSetUp = true;
                 }

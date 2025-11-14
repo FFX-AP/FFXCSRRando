@@ -42,15 +42,15 @@ class SanctuaryTransition : Transition
             {
                 Transition actorPositions;
                 //Position Party Member 1
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { (short)(formation[0] + 1) }, Target_x = 1173.339f, Target_y = -30.048f, Target_z = -1097.457f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { (short)(formation[0] + 1) }, Target_x = 1173.339f, Target_y = -30.048f, Target_z = -1097.457f };
                 actorPositions.Execute();
 
                 //Position Party Member 2
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { (short)(formation[1] + 1) }, Target_x = 1178.746f, Target_y = -30.048f, Target_z = -1135.846f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { (short)(formation[1] + 1) }, Target_x = 1178.746f, Target_y = -30.048f, Target_z = -1135.846f };
                 actorPositions.Execute();
 
                 //Position Party Member 3
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { (short)(formation[2] + 1) }, Target_x = 1173.225f, Target_y = -30.048f, Target_z = -1180.447f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { (short)(formation[2] + 1) }, Target_x = 1173.225f, Target_y = -30.048f, Target_z = -1180.447f };
                 actorPositions.Execute();
 
                 Stage += 1;
