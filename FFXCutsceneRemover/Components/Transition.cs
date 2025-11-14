@@ -50,7 +50,7 @@ public class Transition
     public float? PartyTarget_y = null;
     public float? PartyTarget_z = null;
 
-    public formations? FormationSwitch = null;
+    //public formations? FormationSwitch = null;
 
     /* Only add members here for memory addresses that we want to write the value to.
      * If we only ever read the value then there is no need to add it here. */
@@ -546,7 +546,7 @@ public class Transition
             WriteValue<byte>(MemoryWatchers.AuronOverdrives, (byte)(MemoryWatchers.AuronOverdrives.Current | AddOverdrive));
         }
 
-        UpdateFormation(Formation);
+        //UpdateFormation(Formation);
 
         if (PositionTidusAfterLoad)
         {
@@ -598,10 +598,10 @@ public class Transition
             }
         }
 
-        if (SetSeed)
+        /*if (SetSeed)
         {
             SetRngValues();
-        }
+        }*/
 
     }
 
@@ -974,7 +974,7 @@ public class Transition
 
     // Formation Functions
 
-    public enum formations
+    /*public enum formations
     {
         Klikk2,
         PreKimahri,
@@ -1166,10 +1166,10 @@ public class Transition
             }
             RemoveDuplicates(formation);
             WriteBytes(MemoryWatchers.Formation, formation);
-        }
+        }*/
     }
 
-    private void RemoveDuplicates(byte[] formation)
+    /*private void RemoveDuplicates(byte[] formation)
     {
         bool[] characterPresent = new bool[81];
 
@@ -1305,4 +1305,4 @@ public class Transition
         return temp & 0x7FFFFFFF;
     }
 
-}
+}*/

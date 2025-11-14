@@ -57,7 +57,7 @@ class UnderLakeTransition : Transition
             TidusZCoordinate = MemoryWatchers.TidusZCoordinate.Current;
             TidusRotation = MemoryWatchers.TidusRotation.Current;
 
-            new Transition { RoomNumber = 129, Storyline = 1704, SpawnPoint = 0, Description = "Bikanel Intro", FormationSwitch = Transition.formations.BikanelStart }.Execute();
+            new Transition { RoomNumber = 129, Storyline = 1704, SpawnPoint = 0, Description = "Bikanel Intro", /*FormationSwitch = Transition.formations.BikanelStart */}.Execute();
 
             Stage += 1;
 

@@ -7,7 +7,7 @@ namespace FFXCutsceneRemover;
 
 class GuiTransition : Transition
 {
-    static private byte[] GuiFormation = { 0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0xFF, 0xFF, 0xFF, 0xFF };
+    //static private byte[] GuiFormation = { 0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0xFF, 0xFF, 0xFF, 0xFF };
 
     static private List<short> CutsceneAltList2 = new List<short>(new short[] { 4449, 4450 });
 
@@ -57,7 +57,7 @@ class GuiTransition : Transition
         {
             process.Suspend();
 
-            GuiFormation = process.ReadBytes(MemoryWatchers.Formation.Address, 10);
+            //GuiFormation = process.ReadBytes(MemoryWatchers.Formation.Address, 10);
 
             new Transition
             {
@@ -71,7 +71,7 @@ class GuiTransition : Transition
                 ScriptedBattleVar3 = 0x00000129,
                 ScriptedBattleVar4 = 0x00000014,
                 EncounterTrigger = 2,
-                FormationSwitch = formations.PreGui2,
+                //FormationSwitch = formations.PreGui2,
                 Description = "Sinspawn Gui 2",
                 ForceLoad = false
             }.Execute();
@@ -84,7 +84,7 @@ class GuiTransition : Transition
         {
             process.Suspend();
 
-            new Transition { Formation = GuiFormation, FormationSwitch = formations.PostGui, Description = "Fix Party", ForceLoad = false }.Execute();
+            //new Transition { Formation = GuiFormation, FormationSwitch = formations.PostGui, Description = "Fix Party", ForceLoad = false }.Execute();
 
             Stage += 1;
 

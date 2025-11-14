@@ -15,28 +15,27 @@ namespace FFXCutsceneRemover;
 internal sealed class CsrConfigBinder : BinderBase<CsrConfig>
 {
     private readonly Option<bool?> _optCsrOn;
-    private readonly Option<bool?> _optCsrBreakOn;
-    private readonly Option<bool?> _optTrueRngOn;
-    private readonly Option<bool?> _optSetSeedOn;
+    //private readonly Option<bool?> _optCsrBreakOn;
+    //private readonly Option<bool?> _optTrueRngOn;
+    //private readonly Option<bool?> _optSetSeedOn;
     private readonly Option<int?> _optMtSleepInterval;
 
     public CsrConfigBinder(Option<bool?> optCsrOn,
-                           Option<bool?> optCsrBreakOn,
-                           Option<bool?> optTrueRngOn,
-                           Option<bool?> optSetSeedOn,
+                           //Option<bool?> optCsrBreakOn,
+                           //Option<bool?> optTrueRngOn,
+                           //Option<bool?> optSetSeedOn,
                            Option<int?> optMtSleepInterval)
     {
         _optCsrOn = optCsrOn;
-        _optCsrBreakOn = optCsrBreakOn;
-        _optTrueRngOn = optTrueRngOn;
-        _optSetSeedOn = optSetSeedOn;
+        //_optCsrBreakOn = optCsrBreakOn;
+        //_optTrueRngOn = optTrueRngOn;
+        //_optSetSeedOn = optSetSeedOn;
         _optMtSleepInterval = optMtSleepInterval;
     }
 
     private static bool ResolveMandatoryBoolArg(Option<bool?> opt)
     {
-        Console.WriteLine(opt.Description);
-        return Console.ReadLine()?.ToUpper().StartsWith("Y") ?? false;
+        return true;
     }
 
     protected override CsrConfig GetBoundValue(BindingContext bindingContext)
@@ -44,10 +43,10 @@ internal sealed class CsrConfigBinder : BinderBase<CsrConfig>
         var csr_config = new CsrConfig {};
 
         csr_config.CsrOn = bindingContext.ParseResult.GetValueForOption(_optCsrOn) ?? ResolveMandatoryBoolArg(_optCsrOn);
-        csr_config.CsrBreakOn = csr_config.CsrOn && ResolveMandatoryBoolArg(_optCsrBreakOn);
+        //csr_config.CsrBreakOn = csr_config.CsrOn && ResolveMandatoryBoolArg(_optCsrBreakOn);
 
-        csr_config.TrueRngOn = bindingContext.ParseResult.GetValueForOption(_optTrueRngOn) ?? ResolveMandatoryBoolArg(_optTrueRngOn);
-        csr_config.SetSeedOn = !csr_config.TrueRngOn && ResolveMandatoryBoolArg(_optSetSeedOn);
+        //csr_config.TrueRngOn = bindingContext.ParseResult.GetValueForOption(_optTrueRngOn) ?? ResolveMandatoryBoolArg(_optTrueRngOn);
+        //csr_config.SetSeedOn = !csr_config.TrueRngOn && ResolveMandatoryBoolArg(_optSetSeedOn);
 
         csr_config.MtSleepInterval = bindingContext.ParseResult.GetValueForOption(_optMtSleepInterval) ?? 16;
 
@@ -68,15 +67,15 @@ public class Program
 {
     private static CsrConfig csrConfig;
     private static CutsceneRemover cutsceneRemover = null;
-    private static RNGMod rngMod = null;
+    //private static RNGMod rngMod = null;
 
     private static Process Game = null;
 
     private static bool newGameSetUp = false;
 
-    private static readonly BreakTransition BreakTransition = new BreakTransition { ForceLoad = false, Description = "Break Setup", ConsoleOutput = false, Suspendable = false, Repeatable = true };
-	
-    private static bool seedInjected = false;
+    //private static readonly BreakTransition BreakTransition = new BreakTransition { ForceLoad = false, Description = "Break Setup", ConsoleOutput = false, Suspendable = false, Repeatable = true };
+
+    /*private static bool seedInjected = false;
     private static uint seedSubmitted;
     private static uint[] PCSeeds = new uint[] {
         2804382593,
@@ -335,7 +334,7 @@ public class Program
         3550458696,
         3553426523,
         3556394350
-    };
+    };*/
 
     // Cutscene Remover Version Number, 0x30 - 0x39 = 0 - 9, 0x48 = decimal point
     private const int majorID = 1;
@@ -353,21 +352,21 @@ public class Program
         if (args.Length > 0) DiagnosticLog.Information($"!!! LAUNCHED WITH COMMAND-LINE OPTIONS: {string.Join(' ', args)} !!!");
 
         Option<bool?> optCsrOn           = new Option<bool?>("--csr", "Enable Cutscene Remover (CSR) Mod? [Y/N]");
-        Option<bool?> optCsrBreakOn      = new Option<bool?>("--csrbreak", "Enable break for CSR? [Y/N]");
-        Option<bool?> optTrueRngOn       = new Option<bool?>("--truerng", "Enable True RNG Mod? [Y/N]");
-        Option<bool?> optSetSeedOn       = new Option<bool?>("--setseed", "Enable Set Seed Mod? [Y/N]");
+        //Option<bool?> optCsrBreakOn      = new Option<bool?>("--csrbreak", "Enable break for CSR? [Y/N]");
+        //Option<bool?> optTrueRngOn       = new Option<bool?>("--truerng", "Enable True RNG Mod? [Y/N]");
+        //Option<bool?> optSetSeedOn       = new Option<bool?>("--setseed", "Enable Set Seed Mod? [Y/N]");
         Option<int?>  optMtSleepInterval = new Option<int?>("--mt_sleep_interval", "Specify the main thread sleep interval. [ms]");
 
         RootCommand rootCmd = new RootCommand("Launches the FFX Cutscene Remover.")
         {
             optCsrOn,
-            optCsrBreakOn,
-            optTrueRngOn,
-            optSetSeedOn,
+            //optCsrBreakOn,
+            //optTrueRngOn,
+            //optSetSeedOn,
             optMtSleepInterval
         };
 
-        rootCmd.SetHandler(MainLoop, new CsrConfigBinder(optCsrOn, optCsrBreakOn, optTrueRngOn, optSetSeedOn, optMtSleepInterval));
+        rootCmd.SetHandler(MainLoop, new CsrConfigBinder(optCsrOn,/*optCsrBreakOn, optTrueRngOn, optSetSeedOn,*/ optMtSleepInterval));
 
         rootCmd.Invoke(args);
         return;
@@ -377,10 +376,10 @@ public class Program
     {
         csrConfig = config;
 
-        if (csrConfig.SetSeedOn)
+        /*if (csrConfig.SetSeedOn)
         {
             SetSeed();
-        }
+        }*/
 
         while (true)
         {
@@ -407,7 +406,7 @@ public class Program
                         0x47,
                         0x43,
                         0x4b,
-                        csrConfig.SetSeedOn ? (byte)0x48 : (byte)0x4b,
+                        //csrConfig.SetSeedOn ? (byte)0x48 : (byte)0x4b,
                         0x00,
                         0x4e
                     };
@@ -419,7 +418,7 @@ public class Program
                         0x46,
                         0x43,
                         0x4a,
-                        csrConfig.SetSeedOn ? (byte)0x48 : (byte)0x4a,
+                        //csrConfig.SetSeedOn ? (byte)0x48 : (byte)0x4a,
                         0x00,
                         0x4d
                     };
@@ -431,7 +430,7 @@ public class Program
                         0x46,
                         0x43,
                         0x4a,
-                        csrConfig.SetSeedOn ? (byte)0x46 : (byte)0x4a,
+                        //csrConfig.SetSeedOn ? (byte)0x46 : (byte)0x4a,
                         0x00,
                         0x4d
                     };
@@ -443,7 +442,7 @@ public class Program
                         0x45,
                         0x41,
                         0x4a,
-                        csrConfig.SetSeedOn ? (byte)0x47 : (byte)0x4a,
+                        //csrConfig.SetSeedOn ? (byte)0x47 : (byte)0x4a,
                         0x00,
                         0x4d
                     };
@@ -456,11 +455,11 @@ public class Program
                 cutsceneRemover.Game = Game;
             }
 
-            if (csrConfig.TrueRngOn)
+            /*if (csrConfig.TrueRngOn)
             {
                 rngMod = new RNGMod();
                 rngMod.Game = Game;
-            }
+            }*/
 
             DiagnosticLog.Information("Starting main loop!");
 
@@ -470,12 +469,12 @@ public class Program
 
                 if (!newGameSetUp && MemoryWatchers.RoomNumber.Current == 0 && MemoryWatchers.Storyline.Current == 0 && MemoryWatchers.Dialogue1.Current == 6)
                 {
-                    if (csrConfig.SetSeedOn)
+                    /*if (csrConfig.SetSeedOn)
                     {
                         DiagnosticLog.Information($"Injecting Seed {seedSubmitted}");
                         new Transition { ForceLoad = false, SetSeed = true, SetSeedValue = unchecked((int)seedSubmitted), RoomNumberAlt = (short)Array.IndexOf(PCSeeds, seedSubmitted) }.Execute();
                         seedInjected = true;
-                    }
+                    }*/
 
                     MemoryWatchers.Watchers.UpdateAll(Game);
 
@@ -484,11 +483,11 @@ public class Program
                         ($"[FFX Speedrunning Mod v{majorID}.{minorID}.{patchID}]", startGameIndents[0]),
                         ($"", startGameIndents[1]),
                         ($"Cutscene Remover: {(csrConfig.CsrOn ? "Enabled" : "Disabled")}", startGameIndents[2]),
-                        ($"Cutscene Remover Break: {(csrConfig.CsrBreakOn ? "Enabled" : "Disabled")}", startGameIndents[3]),
-                        ($"True RNG: {(csrConfig.TrueRngOn ? "Enabled" : "Disabled")}", startGameIndents[4]),
-                        ($"Set Seed: {(MemoryWatchers.RoomNumberAlt.Current != 0 ? PCSeeds[MemoryWatchers.RoomNumberAlt.Current] : "Disabled")}", startGameIndents[5]),
-                        ($"", startGameIndents[6]),
-                        ($"Start Game?", startGameIndents[7])
+                        //($"Cutscene Remover Break: {(csrConfig.CsrBreakOn ? "Enabled" : "Disabled")}", startGameIndents[3]),
+                        //($"True RNG: {(csrConfig.TrueRngOn ? "Enabled" : "Disabled")}", startGameIndents[4]),
+                        //($"Set Seed: {(MemoryWatchers.RoomNumberAlt.Current != 0 ? PCSeeds[MemoryWatchers.RoomNumberAlt.Current] : "Disabled")}", startGameIndents[5]),
+                        ($"", startGameIndents[3]),
+                        ($"Start Game?", startGameIndents[4])
                     };
 
                     new NewGameTransition { ForceLoad = false, ConsoleOutput = false, startGameText = startGameText }.Execute();
@@ -500,7 +499,7 @@ public class Program
                     newGameSetUp = false;
                 }
 
-                if (csrConfig.CsrBreakOn && MemoryWatchers.ForceLoad.Current == 0)
+                /*if (csrConfig.CsrBreakOn && MemoryWatchers.ForceLoad.Current == 0)
                 {
                     if (MemoryWatchers.RoomNumber.Current == 140 && MemoryWatchers.Storyline.Current == 1300)
                     {
@@ -521,17 +520,17 @@ public class Program
                     {
                         new Transition { RoomNumber = 140, Storyline = 1310, SpawnPoint = 0, Description = "End of Break + Map + Rikku afraid + tutorial" }.Execute();
                     }
-				}
+				}*/
 
                 if (csrConfig.CsrOn)
                 {
                     cutsceneRemover.MainLoop();
                 }
 
-                if (csrConfig.TrueRngOn)
+                /*if (csrConfig.TrueRngOn)
                 {
                     rngMod.MainLoop();
-                }
+                }*/
 
                 // Sleep for a bit so we don't destroy CPUs
                 Thread.Sleep(csrConfig.MtSleepInterval);
@@ -552,7 +551,7 @@ public class Program
         return isRunning;
     }
 
-    private static void SetSeed()
+    /*private static void SetSeed()
     {
         bool seedEnteredByUser = false;
 
@@ -574,7 +573,7 @@ public class Program
                 seedEnteredByUser = true;
             }
         }
-    }
+    }*/
 
     private static Process ConnectToTarget(string TargetName)
     {
