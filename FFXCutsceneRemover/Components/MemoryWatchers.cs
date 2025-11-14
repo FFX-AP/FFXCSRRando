@@ -466,7 +466,7 @@ public static class MemoryWatchers
         EncounterTrigger = GetMemoryWatcher<byte>(MemoryLocations.EncounterTrigger);
 
         // Party Configuration
-        /*Formation = GetMemoryWatcher<byte>(MemoryLocations.Formation);
+        Formation = GetMemoryWatcher<byte>(MemoryLocations.Formation);
         RikkuName = GetMemoryWatcher<byte>(MemoryLocations.RikkuName);
         EnableTidus = GetMemoryWatcher<byte>(MemoryLocations.EnableTidus);
         EnableYuna = GetMemoryWatcher<byte>(MemoryLocations.EnableYuna);
@@ -483,7 +483,7 @@ public static class MemoryWatchers
         EnableBahamut = GetMemoryWatcher<byte>(MemoryLocations.EnableBahamut);
         EnableAnima = GetMemoryWatcher<byte>(MemoryLocations.EnableAnima);
         EnableYojimbo = GetMemoryWatcher<byte>(MemoryLocations.EnableYojimbo);
-        EnableMagus = GetMemoryWatcher<byte>(MemoryLocations.EnableMagus);*/
+        EnableMagus = GetMemoryWatcher<byte>(MemoryLocations.EnableMagus);
 
         // Encounter Rate
         EncountersActiveFlag = GetMemoryWatcher<byte>(MemoryLocations.EncountersActiveFlag);

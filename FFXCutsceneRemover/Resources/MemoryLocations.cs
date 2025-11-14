@@ -169,7 +169,7 @@ static class MemoryLocations
     public static MemoryLocation EncounterTrigger      = new MemoryLocation("EncounterTrigger", 0xD2A8E2); // Set to 2 to trigger boss encounter
 
     // Party Configuration
-    /*public static MemoryLocation Formation     = new MemoryLocation("Formation", 0xD307E8);
+    public static MemoryLocation Formation     = new MemoryLocation("Formation", 0xD307E8);
     public static MemoryLocation RikkuName     = new MemoryLocation("RikkuName", 0xD32E54);
     public static MemoryLocation EnableTidus   = new MemoryLocation("EnableTidus", 0xD32088);
     public static MemoryLocation EnableYuna    = new MemoryLocation("EnableYuna", 0xD3211C);
@@ -186,7 +186,7 @@ static class MemoryLocations
     public static MemoryLocation EnableBahamut = new MemoryLocation("EnableBahamut", 0xD32778);
     public static MemoryLocation EnableAnima   = new MemoryLocation("EnableYojimbo", 0xD3280C);
     public static MemoryLocation EnableYojimbo = new MemoryLocation("EnableAnima", 0xD328A0);
-    public static MemoryLocation EnableMagus   = new MemoryLocation("EnableMagus", 0xD32934);*/
+    public static MemoryLocation EnableMagus   = new MemoryLocation("EnableMagus", 0xD32934);
 
     // HP/MP TODO: Find a better method for full party restore to clean this up
     public static MemoryLocation TidusHP    = new MemoryLocation("TidusHP", 0xD32078);
