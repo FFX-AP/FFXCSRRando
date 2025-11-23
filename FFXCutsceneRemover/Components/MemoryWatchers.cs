@@ -1,10 +1,10 @@
-﻿using System;
-using System.Diagnostics;
-using System.Reflection;
-
-using FFXCutsceneRemover.ComponentUtil;
+﻿using FFXCutsceneRemover.ComponentUtil;
 using FFXCutsceneRemover.Logging;
 using FFXCutsceneRemover.Resources;
+using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace FFXCutsceneRemover;
 
@@ -14,6 +14,7 @@ public static class MemoryWatchers
     private const string MODULE = "FFX.exe";
 
     private static int processBaseAddress;
+    private static int getBaseAddressMaxAttempts = 1000;
 
     public static Process Process;
     public static MemoryWatcherList Watchers = new MemoryWatcherList();
@@ -312,7 +313,21 @@ public static class MemoryWatchers
     public static void Initialize(Process process)
     {
         Process = process;
-        processBaseAddress = process.Modules[0].BaseAddress.ToInt32();
+        processBaseAddress = -1;
+
+        for (int i = 0; i < getBaseAddressMaxAttempts;  i++)
+        {
+            try
+            {
+                processBaseAddress = process.Modules[0].BaseAddress.ToInt32();
+                break;
+            }
+            catch (Win32Exception e)
+            {
+                DiagnosticLog.Information("Exception: " + e.Message);
+            }
+        }
+
         DiagnosticLog.Information($"Process base address: {processBaseAddress:X8}");
 
         Language = GetMemoryWatcher<byte>(MemoryLocations.Language);
