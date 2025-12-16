@@ -298,9 +298,12 @@ static class Transitions
             () => { return MemoryWatchers.RoomNumber.Current == 252 && MemoryWatchers.Storyline.Current == 190 && MemoryWatchers.State.Current == 1; },
             new Transition { RoomNumber = 60, Storyline = 196, Description = "Tidus has a dream about Yuna, Tidus wakes up + FMV" } },
                                         // Tidus wakes up again (Party healed at this point)
+        //{
+        //    () => { return MemoryWatchers.RoomNumber.Current == 17 && MemoryWatchers.Storyline.Current == 200; },
+        //    new BrotherhoodTransition { RoomNumber = 69, Storyline = 210, SpawnPoint = 3, /*EnableYuna = 17, EnableLulu = 17, */TidusWeaponDamageBoost = 5, Description = "Yuna says goodbye to Besaid" } },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 17 && MemoryWatchers.Storyline.Current == 200; },
-            new BrotherhoodTransition { RoomNumber = 69, Storyline = 210, SpawnPoint = 3, /*EnableYuna = 17, EnableLulu = 17, */TidusWeaponDamageBoost = 5, Description = "Yuna says goodbye to Besaid" } },
+            new Transition { RoomNumber = 69, Storyline = 210, SpawnPoint = 3, /*EnableYuna = 17, EnableLulu = 17, */TidusWeaponDamageBoost = 5, Description = "Yuna says goodbye to Besaid" } },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 67 && MemoryWatchers.Storyline.Current == 210; },
             new Transition { RoomNumber = 67, Storyline = 214, SpawnPoint = 3, Description = "Yuna says goodbye to Besaid again"} },
@@ -1075,10 +1078,18 @@ static class Transitions
         { 
             () => { return MemoryWatchers.RoomNumber.Current == 326 && MemoryWatchers.Storyline.Current == 3360 && MemoryWatchers.HpEnemyA.Current == 0; }, 
             new YuYevonTransition {ForceLoad=false, Description = "Contest of Aeons!", Suspendable = false, Repeatable = true} },
+        //{     //Non Functional
+        //    () => { return MemoryWatchers.RoomNumber.Current == 258 && MemoryWatchers.Storyline.Current == 3210 && MemoryWatchers.CutsceneAlt.Current == 4648; },
+        //    new Transition {ForceLoad = true, RoomNumber = 258, Storyline = 3210, SpawnPoint = 2, Description = "Omega Ruins", Suspendable = false, Repeatable = true} },
+
+        //{     //Non functional, need to create a proper transition file for this, but impossible without finding the correct memory addresses / pointers as per the MemoryWatchers for other boss fights
+        //    () => { return MemoryWatchers.RoomNumber.Current == 138 && MemoryWatchers.Storyline.Current == 3210 && MemoryWatchers.CutsceneAlt.Current == 2487 && MemoryWatchers.NPCLastInteraction.Current == 19; },
+        //    new Transition {EncounterMapID = 48, EncounterFormationID1 = 4, EncounterFormationID2 = 0, BattleState = 45, BattleState2 = 1, ScriptedBattleFlag1 = 0, ScriptedBattleFlag2 = 1, 
+        //            ScriptedBattleVar1 = 0x00000500, EncounterTrigger = 2, ForceLoad = false, Description = "Pre Dark Ifrit"} },
 
         // Miscellaneous transitions
 
-        { 
+        {
             () => { return MemoryWatchers.RoomNumber.Current == 56; }, 
             new YojimboTransition { ForceLoad=false, Description = "Lady Ginnem Attacks", Suspendable = false, Repeatable = true } },
         //{ () => { return MemoryWatchers.RoomNumber.Current == 283 }, new YojimboFaythTransition {ForceLoad=false, Description = "Yojimbo Fayth Intro", Suspendable = false, Repeatable = true} }
@@ -1164,6 +1175,9 @@ static class Transitions
         { 
             () => { return MemoryWatchers.EncounterMapID.Current == 78 && MemoryWatchers.EncounterFormationID2.Current == 0 && MemoryWatchers.Storyline.Current == 3205; }, 
             new Transition { Storyline = 3250, EncounterMapID = 0, EncounterFormationID2 = 0, ForceLoad = false, Description = "Seymour Omnis"} },
+        //{
+        //    () => { return MemoryWatchers.EncounterMapID.Current == 48 && MemoryWatchers.EncounterFormationID2.Current == 0 && MemoryWatchers.Storyline.Current == 3210; },
+        //    new Transition { RoomNumber = 138, EncounterMapID = 0, EncounterFormationID2 = 0, ForceLoad = false, Description = "Dark Ifrit"} },
 
         // Miscellaneous
         { 
