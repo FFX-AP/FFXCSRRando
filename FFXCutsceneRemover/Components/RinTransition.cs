@@ -37,7 +37,7 @@ class RinTransition : Transition
             }
             else if (MemoryWatchers.RinTransition.Current == (BaseCutsceneValue + 0x5B1) && Stage == 3)
             {
-                process.Suspend();
+                //process.Suspend();
 
                 new Transition { Storyline = 767, SpawnPoint = 0 }.Execute();
 

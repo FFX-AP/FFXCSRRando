@@ -24,7 +24,7 @@ class AftermathTransition : Transition
             }
             else if (MemoryWatchers.DjoseTransition.Current == (BaseCutsceneValue + 0x13D3) && Stage == 1)
             {
-                process.Suspend();
+                //process.Suspend();
 
                 new Transition { RoomNumber = 93, Storyline = 960, SpawnPoint = 0, Description = "Tidus talks to Kimahri" }.Execute();
 

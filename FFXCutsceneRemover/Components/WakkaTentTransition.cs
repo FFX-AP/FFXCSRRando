@@ -21,7 +21,7 @@ class WakkaTentTransition : Transition
         // Check for selection made and the first item has been selected
         if (dialogBoxStatus == 0x02 && dialogBoxSelection == 0x00)
         {
-            process.Suspend();
+            //process.Suspend();
             new Transition { Storyline = 154, Description = "Priest enters Wakka's tent", PositionTidusAfterLoad = true, Target_x = 14.700f, Target_y = 1.000f, Target_z = 12.813f, Target_var1 = 33 }.Execute();
             process.Resume();
         }

@@ -21,7 +21,7 @@ class ShoopufTransition : Transition
         // Check for selection made and the first item has been selected
         if (MemoryWatchers.Dialogue1.Current == 2 && dialogBoxStatus == 0x02 && dialogBoxSelection == 0x01)
         {
-            process.Suspend();
+            //process.Suspend();
             new Transition { RoomNumber = 99, Description = "All Aboards!" }.Execute();
             process.Resume();
         }

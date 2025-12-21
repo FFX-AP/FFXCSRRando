@@ -50,7 +50,7 @@ public class Transition
     public float? PartyTarget_y = null;
     public float? PartyTarget_z = null;
 
-    public formations? FormationSwitch = null;
+    //public formations? FormationSwitch = null;
 
     /* Only add members here for memory addresses that we want to write the value to.
      * If we only ever read the value then there is no need to add it here. */
@@ -428,7 +428,7 @@ public class Transition
         WriteValue(MemoryWatchers.AeonTransition, AeonTransition);
         WriteValue(MemoryWatchers.YuYevonTransition, YuYevonTransition);
         WriteValue(MemoryWatchers.YojimboFaythTransition, YojimboFaythTransition);
-        WriteValue(MemoryWatchers.EnableTidus, EnableTidus);
+        /*WriteValue(MemoryWatchers.EnableTidus, EnableTidus);
         WriteValue(MemoryWatchers.EnableYuna, EnableYuna);
         WriteValue(MemoryWatchers.EnableAuron, EnableAuron);
         WriteValue(MemoryWatchers.EnableKimahri, EnableKimahri);
@@ -443,7 +443,7 @@ public class Transition
         WriteValue(MemoryWatchers.EnableBahamut, EnableBahamut);
         WriteValue(MemoryWatchers.EnableAnima, EnableAnima);
         WriteValue(MemoryWatchers.EnableYojimbo, EnableYojimbo);
-        WriteValue(MemoryWatchers.EnableMagus, EnableMagus);
+        WriteValue(MemoryWatchers.EnableMagus, EnableMagus);*/
 
         WriteValue(MemoryWatchers.BaajFlag1, BaajFlag1);
         WriteValue(MemoryWatchers.SSWinnoFlag1, SSWinnoFlag1);
@@ -521,7 +521,7 @@ public class Transition
             ClearAllBattleRewards();
         }
 
-        if (AddSinLocation)
+        /*if (AddSinLocation)
         {
             AddSin();
         }
@@ -529,24 +529,24 @@ public class Transition
         if (RemoveSinLocation)
         {
             RemoveSin();
-        }
+        }*/
 
         if (PositionPartyOffScreen)
         {
             PartyOffScreen();
         }
 
-        if (!(AddItemsToInventory is null))
+        /*if (!(AddItemsToInventory is null))
         {
             AddItems(AddItemsToInventory);
-        }
+        }*/
 
         if (AddOverdrive > 0)
         {
             WriteValue<byte>(MemoryWatchers.AuronOverdrives, (byte)(MemoryWatchers.AuronOverdrives.Current | AddOverdrive));
         }
 
-        UpdateFormation(Formation);
+        //UpdateFormation(Formation);
 
         if (PositionTidusAfterLoad)
         {
@@ -563,7 +563,7 @@ public class Transition
             {
                 MemoryWatchers.FrameCounterFromLoad.Update(process);
             }
-            process.Suspend();
+            //process.Suspend();
             byte originalEncountersActiveFlag = MemoryWatchers.EncountersActiveFlag.Current;
             WriteValue<byte>(MemoryWatchers.EncountersActiveFlag, 0);
             SetActorPosition(1, Target_x, Target_y, Target_z, Target_rot, Target_var1);
@@ -573,7 +573,7 @@ public class Transition
             {
                 MemoryWatchers.FrameCounterFromLoad.Update(process);
             }
-            process.Suspend();
+            //process.Suspend();
             if (KeepEncounterThreatAfterLoad)
             {
                 WriteValue<float>(MemoryWatchers.TotalDistance, TotalDistanceBeforeLoad);
@@ -598,10 +598,10 @@ public class Transition
             }
         }
 
-        if (SetSeed)
+        /*if (SetSeed)
         {
             SetRngValues();
-        }
+        }*/
 
     }
 
@@ -766,7 +766,7 @@ public class Transition
         // Clear Gil
         WriteValue<int>(MemoryWatchers.GilBattleRewards, 0);
 
-        if (AddRewardItems)
+        /*if (AddRewardItems)
         {
             byte[] items = process.ReadBytes(MemoryWatchers.ItemsStart.Address, 224);
             byte[] itemsQty = process.ReadBytes(MemoryWatchers.ItemsQtyStart.Address, 112);
@@ -811,7 +811,7 @@ public class Transition
 
             WriteBytes(MemoryWatchers.ItemsStart, items);
             WriteBytes(MemoryWatchers.ItemsQtyStart, itemsQty);
-        }
+        }*/
 
         // Clear Battle Reward Items
         WriteValue<byte>(MemoryWatchers.BattleRewardItemCount, 0);
@@ -826,7 +826,7 @@ public class Transition
         WriteBytes(MemoryWatchers.CharacterAPFlags, new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 });
     }
 
-    private void AddItems((byte itemref, byte itemqty)[] AddItemsToInventory)
+    /*private void AddItems((byte itemref, byte itemqty)[] AddItemsToInventory)
     {
         byte[] items = process.ReadBytes(MemoryWatchers.ItemsStart.Address, 224);
         byte[] itemsQty = process.ReadBytes(MemoryWatchers.ItemsQtyStart.Address, 112);
@@ -867,9 +867,9 @@ public class Transition
 
         WriteBytes(MemoryWatchers.ItemsStart, items);
         WriteBytes(MemoryWatchers.ItemsQtyStart, itemsQty);
-    }
+    }*/
 
-    private void AddSin()
+    /*(private void AddSin()
     {
         WriteValue<short>(MemoryWatchers.AirshipDestinations, (short)(MemoryWatchers.AirshipDestinations.Current + 512));
     }
@@ -877,7 +877,7 @@ public class Transition
     private void RemoveSin()
     {
         WriteValue<short>(MemoryWatchers.AirshipDestinations, (short)(MemoryWatchers.AirshipDestinations.Current - 512));
-    }
+    }*/
 
     private void PartyOffScreen()
     {
@@ -974,7 +974,7 @@ public class Transition
 
     // Formation Functions
 
-    public enum formations
+    /*public enum formations
     {
         Klikk2,
         PreKimahri,
@@ -1166,10 +1166,10 @@ public class Transition
             }
             RemoveDuplicates(formation);
             WriteBytes(MemoryWatchers.Formation, formation);
-        }
+        }*/
     }
 
-    private void RemoveDuplicates(byte[] formation)
+    /*private void RemoveDuplicates(byte[] formation)
     {
         bool[] characterPresent = new bool[81];
 
@@ -1305,4 +1305,4 @@ public class Transition
         return temp & 0x7FFFFFFF;
     }
 
-}
+}*/

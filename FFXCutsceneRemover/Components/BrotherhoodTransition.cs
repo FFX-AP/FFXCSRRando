@@ -13,21 +13,21 @@ class BrotherhoodTransition : Transition
 {
     public override void Execute(string defaultDescription = "")
     {
-        base.Execute(); // Execute the cutscene transition first (AreaID + Cutscene + SpawnPoint + EnableYuna + EnableLulu)
+        /*base.Execute(); // Execute the cutscene transition first (AreaID + Cutscene + SpawnPoint + EnableYuna + EnableLulu)
         int baseAddress = MemoryWatchers.GetBaseAddress();
 
-        int equipmentStructRelativeOffset = 0xD30F2C;
-        byte equipmentStructSizeBytes = 22;
-        byte equipmentEquippedFlagOffset = 0x06;
+        //int equipmentStructRelativeOffset = 0xD30F2C;
+        //byte equipmentStructSizeBytes = 22;
+        //byte equipmentEquippedFlagOffset = 0x06;
 
         int characterDataStructRelativeOffset = 0xD3205C;
         byte characterDataStructSizeBytes = 148;
-        byte equippedWeaponIndexOffset = 0x2D;
+        //byte equippedWeaponIndexOffset = 0x2D;
 
-        byte equipmentIndex;
+        //byte equipmentIndex;
         byte characterIndex;
 
-        equipmentIndex = 0;
+        /*equipmentIndex = 0;
         MemoryWatcher<byte> unequipLongsword = new MemoryWatcher<byte>(new IntPtr(baseAddress + equipmentStructRelativeOffset + equipmentStructSizeBytes * equipmentIndex + equipmentEquippedFlagOffset));
         WriteValue<byte>(unequipLongsword, 0xFF);
 
@@ -54,9 +54,9 @@ class BrotherhoodTransition : Transition
         // By triangle I mean the small triangle that appears in menus to show what item is equipped
         equipmentIndex = 34;
         MemoryWatcher<byte> equipBrotherhoodTriangle = new MemoryWatcher<byte>(new IntPtr(baseAddress + equipmentStructRelativeOffset + equipmentStructSizeBytes * equipmentIndex + equipmentEquippedFlagOffset));
-        WriteValue<byte>(equipBrotherhoodTriangle, 0x00);
+        WriteValue<byte>(equipBrotherhoodTriangle, 0x00);*/
 
-        characterIndex = 0;
+        /*characterIndex = 0;
         MemoryWatcher<byte> equipBrotherhood = new MemoryWatcher<byte>(new IntPtr(baseAddress + characterDataStructRelativeOffset + characterDataStructSizeBytes * characterIndex + equippedWeaponIndexOffset));
         WriteValue<byte>(equipBrotherhood, 0x22);
 
@@ -89,6 +89,6 @@ class BrotherhoodTransition : Transition
                 ItemMenu = IntPtr.Add(ItemMenu, 2);
                 ++count;
             }
-        }
+        }*/
     }
 }

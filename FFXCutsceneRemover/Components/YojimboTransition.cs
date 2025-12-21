@@ -12,7 +12,7 @@ class YojimboTransition : Transition
 
         if ((MemoryWatchers.CalmLandsFlag.Current & 0x02) == 0x00 && MemoryWatchers.TidusZCoordinate.Current > 1655.0f && Stage == 0)
         {
-            process.Suspend();
+            //process.Suspend();
 
             new Transition
             {

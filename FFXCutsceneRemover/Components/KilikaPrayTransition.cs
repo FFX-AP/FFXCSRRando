@@ -20,7 +20,7 @@ class KilikaPrayTransition : Transition
         // Selection is unimportant so just check a selection has been made
         if (dialogBoxStatus == 0x02)
         {
-            process.Suspend();
+            //process.Suspend();
             new Transition { RoomNumber = 96, Storyline = 335, SpawnPoint = 0, Description = "Pray or Stand and Watch", PositionTidusAfterLoad = true, Target_x = -17.879f, Target_z = 43.657f, Target_var1 = 74 }.Execute();
             process.Resume();
         }

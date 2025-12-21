@@ -26,15 +26,15 @@ class SahaginTransition : Transition
 
                 Transition actorPositions;
                 //Position Wakka
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 5 }, Target_x = -20.0f, Target_y = -510.0f, Target_z = 0.0f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 5 }, Target_x = -20.0f, Target_y = -510.0f, Target_z = 0.0f };
                 actorPositions.Execute();
 
                 //Position Tidus
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 1 }, Target_x = 20.0f, Target_y = -510.0f, Target_z = 0.0f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 1 }, Target_x = 20.0f, Target_y = -510.0f, Target_z = 0.0f };
                 actorPositions.Execute();
 
                 //Position Sahagins
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 4252 }, Target_x = 0.0f, Target_y = -510.0f, Target_z = -60.0f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 4252 }, Target_x = 0.0f, Target_y = -510.0f, Target_z = -60.0f };
                 actorPositions.Execute();
 
                 Stage = 2;

@@ -13,7 +13,7 @@ class SeymourTransition : Transition
 
         if (MemoryWatchers.MovementLock.Current == 0 && Stage == 0)
         {
-            process.Suspend();
+            //process.Suspend();
 
             base.Execute();
 
@@ -25,7 +25,7 @@ class SeymourTransition : Transition
         }
         else if (MemoryWatchers.MovementLock.Current == 0x10 && Stage == 1)
         {
-            process.Suspend();
+            //process.Suspend();
 
             WriteValue<byte>(MemoryWatchers.CutsceneTiming, 0);
 
@@ -49,15 +49,15 @@ class SeymourTransition : Transition
 
             Transition actorPositions;
             //Position Party Member 1
-            actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { (short)(formation[0] + 1) }, Target_x = 35.668f, Target_y = 0.0f, Target_z = -42.0f };
+            actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { (short)(formation[0] + 1) }, Target_x = 35.668f, Target_y = 0.0f, Target_z = -42.0f };
             actorPositions.Execute();
 
             //Position Party Member 2
-            actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { (short)(formation[1] + 1) }, Target_x = 3.668f, Target_y = 0.0f, Target_z = -55.0f };
+            actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { (short)(formation[1] + 1) }, Target_x = 3.668f, Target_y = 0.0f, Target_z = -55.0f };
             actorPositions.Execute();
 
             //Position Party Member 3
-            actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { (short)(formation[2] + 1) }, Target_x = -28.332f, Target_y = 0.0f, Target_z = -42.0f };
+            actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { (short)(formation[2] + 1) }, Target_x = -28.332f, Target_y = 0.0f, Target_z = -42.0f };
             actorPositions.Execute();
 
             Stage += 1;

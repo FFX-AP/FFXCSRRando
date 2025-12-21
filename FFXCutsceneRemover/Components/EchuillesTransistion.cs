@@ -21,7 +21,7 @@ class EchuillesTransition : Transition
                 Transition actorPositions;
 
                 //Position Echuilles
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 4210 }, Target_x = 0.0f, Target_y = -124.0f, Target_z = -40.0f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 4210 }, Target_x = 0.0f, Target_y = -124.0f, Target_z = -40.0f };
                 actorPositions.Execute();
 
                 Stage += 1;

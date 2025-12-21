@@ -29,7 +29,7 @@ class GuardsTransition : Transition
             }
             else if (MemoryWatchers.GuardsTransition.Current == (BaseCutsceneValue + 0x90F0) && Stage == 2)
             {
-                new Transition { ForceLoad = false, SupressAutosaveOnForceLoad = 0, SupressAutosaveCounter = 0, Description = "Clean Up ForceLoad Values", ConsoleOutput = false }.Execute();
+                new Transition { ForceLoad = false, SupressAutosaveOnForceLoad = 0, SupressAutosaveCounter = 0, Description = "Clean Up ForceLoad Values" }.Execute();
                 Stage += 1;
             }
         }

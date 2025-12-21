@@ -19,7 +19,7 @@ class UnderLakeTransition : Transition
 
         if (MemoryWatchers.Storyline.Current == 1600 && MemoryWatchers.State.Current == 0 && MemoryWatchers.NPCLastInteraction.Current == 7) //Rikku is Character 7 on this screen
         {
-            process.Suspend();
+            //process.Suspend();
 
             base.Execute();
 
@@ -35,7 +35,7 @@ class UnderLakeTransition : Transition
         }
         else if (MemoryWatchers.State.Current == 0 && Stage == 1)
         {
-            process.Suspend();
+            //process.Suspend();
 
             TidusXCoordinate = MemoryWatchers.TidusXCoordinate.Current;
             TidusYCoordinate = MemoryWatchers.TidusYCoordinate.Current;
@@ -50,14 +50,14 @@ class UnderLakeTransition : Transition
         }
         else if (MemoryWatchers.State.Current == 0 && MemoryWatchers.NPCLastInteraction.Current == 5 && Stage == 2) // Auron is character 5 on this screen
         {
-            process.Suspend();
+            //process.Suspend();
 
             TidusXCoordinate = MemoryWatchers.TidusXCoordinate.Current;
             TidusYCoordinate = MemoryWatchers.TidusYCoordinate.Current;
             TidusZCoordinate = MemoryWatchers.TidusZCoordinate.Current;
             TidusRotation = MemoryWatchers.TidusRotation.Current;
 
-            new Transition { RoomNumber = 129, Storyline = 1704, SpawnPoint = 0, Description = "Bikanel Intro", FormationSwitch = Transition.formations.BikanelStart }.Execute();
+            new Transition { RoomNumber = 129, Storyline = 1704, SpawnPoint = 0, Description = "Bikanel Intro", /*FormationSwitch = Transition.formations.BikanelStart */}.Execute();
 
             Stage += 1;
 

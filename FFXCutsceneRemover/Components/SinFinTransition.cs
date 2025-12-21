@@ -30,18 +30,18 @@ class SinFinTransition : Transition
                 Transition actorPositions;
 
                 //Position Tidus
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 1 }, Target_x = -29.0f, Target_y = -50.0f, Target_z = 131.5f };
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 1 }, Target_x = -29.0f, Target_y = -50.0f, Target_z = 131.5f };
                 actorPositions.Execute();
 
                 //Position Sin Fin
-                actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, TargetActorIDs = new short[] { 4209 }, Target_x = 1.0f, Target_z = 945.0f};
+                actorPositions = new Transition { ForceLoad = false, TargetActorIDs = new short[] { 4209 }, Target_x = 1.0f, Target_z = 945.0f};
                 actorPositions.Execute();
 
                 Stage += 1;
             }
             else if (MemoryWatchers.SinFinTransition.Current == (BaseCutsceneValue + 0xCFD) && MemoryWatchers.BattleState2.Current == 1 && Stage == 2) //200 = Sinscale HP
             {
-                process.Suspend();
+                //process.Suspend();
 
                 new Transition { ForceLoad = false, Storyline = 272, Description = "Post Sin Fin" }.Execute();
 

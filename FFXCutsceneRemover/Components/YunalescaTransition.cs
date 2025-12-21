@@ -46,9 +46,9 @@ class YunalescaTransition : Transition
             }
             else if (MemoryWatchers.GilRewardCounter.Current == 0 && Stage == 5)
             {
-                process.Suspend();
+                //process.Suspend();
 
-                new Transition { MenuCleanup = true, AddRewardItems = true, Description = "Exit Menu", ForceLoad = false }.Execute();
+                new Transition { MenuCleanup = true, /*AddRewardItems = true, */Description = "Exit Menu", ForceLoad = false }.Execute();
 
                 Stage += 1;
 

@@ -7,7 +7,7 @@ namespace FFXCutsceneRemover;
 
 class GuiTransition : Transition
 {
-    static private byte[] GuiFormation = { 0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0xFF, 0xFF, 0xFF, 0xFF };
+    //static private byte[] GuiFormation = { 0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0xFF, 0xFF, 0xFF, 0xFF };
 
     static private List<short> CutsceneAltList2 = new List<short>(new short[] { 4449, 4450 });
 
@@ -25,7 +25,7 @@ class GuiTransition : Transition
         
         if (MemoryWatchers.Dialogue1.Current == 95 && dialogBoxStatus == 0x02 && dialogBoxSelection == 0x01 && Stage == 0)
         {
-            process.Suspend();
+            //process.Suspend();
             
             new Transition
             {
@@ -42,7 +42,7 @@ class GuiTransition : Transition
             }.Execute();
 
             // Reposition Party Members just off screen to run into battle
-            Transition actorPositions = new Transition { ForceLoad = false, ConsoleOutput = false, PartyTarget_x = 427.0f, PartyTarget_z = 3350.0f, PositionPartyOffScreen = true };
+            Transition actorPositions = new Transition { ForceLoad = false, PartyTarget_x = 427.0f, PartyTarget_z = 3350.0f, PositionPartyOffScreen = true };
             actorPositions.Execute();
 
             Stage += 1;
@@ -55,9 +55,9 @@ class GuiTransition : Transition
         }
         else if (MemoryWatchers.BattleState2.Current == 0 && Stage == 2)
         {
-            process.Suspend();
+            //process.Suspend();
 
-            GuiFormation = process.ReadBytes(MemoryWatchers.Formation.Address, 10);
+            //GuiFormation = process.ReadBytes(MemoryWatchers.Formation.Address, 10);
 
             new Transition
             {
@@ -71,7 +71,7 @@ class GuiTransition : Transition
                 ScriptedBattleVar3 = 0x00000129,
                 ScriptedBattleVar4 = 0x00000014,
                 EncounterTrigger = 2,
-                FormationSwitch = formations.PreGui2,
+                //FormationSwitch = formations.PreGui2,
                 Description = "Sinspawn Gui 2",
                 ForceLoad = false
             }.Execute();
@@ -82,9 +82,9 @@ class GuiTransition : Transition
         }
         else if (MemoryWatchers.Menu.Current == 1 && Stage == 3)
         {
-            process.Suspend();
+            //process.Suspend();
 
-            new Transition { Formation = GuiFormation, FormationSwitch = formations.PostGui, Description = "Fix Party", ForceLoad = false }.Execute();
+            //new Transition { Formation = GuiFormation, FormationSwitch = formations.PostGui, Description = "Fix Party", ForceLoad = false }.Execute();
 
             Stage += 1;
 
