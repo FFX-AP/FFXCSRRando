@@ -557,7 +557,7 @@ static class Transitions
             new Transition { Storyline = 630, SpawnPoint = 1, LucaFlag = 15, PositionTidusAfterLoad = true, Target_x = -84.944f, Target_y = -159.997f, Target_z = -3.714f, Target_rot = -2.635f, Target_var1 = 50, Description = "Tidus and Auron join the group"} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 107 && MemoryWatchers.Storyline.Current == 630 && MemoryWatchers.State.Current == 0; },
-            new Transition { RoomNumber = 95, Storyline = 730, SpawnPoint = 0, Description = "HA HA HA HA"} },
+            new Transition { RoomNumber = 107, Storyline = 730, SpawnPoint = 0, Description = "HA HA HA HA"} },
         // END OF LUCA
         // START OF MI'IHEN
         {
@@ -1062,7 +1062,7 @@ static class Transitions
             new SinCoreTransition {ForceLoad = false, Description = "Sin Core", Suspendable = false, Repeatable = true} },
         { 
             () => { return MemoryWatchers.RoomNumber.Current == 202 && MemoryWatchers.Storyline.Current == 3125 && Math.Abs(MemoryWatchers.XCoordinate.Current - 18.585f) < 0.5f && MemoryWatchers.State.Current == 0; }, 
-            new Transition { RoomNumber = 374, Storyline = 3135, SpawnPoint = 0, Description = "Yuna monologue"} },
+            new Transition { RoomNumber = 202, Storyline = 3135, SpawnPoint = 0, Description = "Yuna monologue"} },
         { 
             () => { return MemoryWatchers.RoomNumber.Current == 202 && MemoryWatchers.Storyline.Current == 3135; }, 
             new OverdriveSinTransition {ForceLoad = false, Description = "Overdrive Sin", Suspendable = false, Repeatable = true} },
