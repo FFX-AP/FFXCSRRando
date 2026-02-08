@@ -1126,7 +1126,7 @@ static class Transitions
             new Transition { RoomNumber = 248, Storyline = 1470, EncounterMapID = 0, EncounterFormationID2 = 0, SpawnPoint = 2, PositionTidusAfterLoad = true, Target_x = -12.163f, Target_y = 0.816f, Target_z = 34.410f, Target_rot = -1.454f, Target_var1 = 135, Description = "Spherimorph", /*AddOverdrive = 16 */} },
         { 
             () => { return MemoryWatchers.EncounterMapID.Current == 44 && MemoryWatchers.EncounterFormationID2.Current == 0 && MemoryWatchers.Storyline.Current == 1485; }, 
-            new Transition { RoomNumber = 192, Storyline = 1504, EncounterMapID = 0, EncounterFormationID2 = 0, SpawnPoint = 1, TargetFramerate = 2, /*FormationSwitch = Transition.formations.PostCrawler, */Description = "Crawler"} },
+            new Transition { RoomNumber = 192, Storyline = 1504, EncounterMapID = 0, EncounterFormationID2 = 0, SpawnPoint = 0, TargetFramerate = 2, /*FormationSwitch = Transition.formations.PostCrawler, */Description = "Crawler"} },
         { 
             () => { return MemoryWatchers.EncounterMapID.Current == 44 && MemoryWatchers.EncounterFormationID2.Current == 1 && MemoryWatchers.Storyline.Current == 1570; }, 
             new Transition { RoomNumber = 54, Storyline = 1600, EncounterMapID = 0, EncounterFormationID2 = 0, SpawnPoint = 0, Description = "Wendigo"} }, // HP Value is the Guard
