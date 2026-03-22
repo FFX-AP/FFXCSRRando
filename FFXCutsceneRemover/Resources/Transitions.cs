@@ -919,15 +919,15 @@ static class Transitions
 
             // END OF HOME
             // START OF BEVELLE
-        { 
-            () => { return MemoryWatchers.RoomNumber.Current == 205 && MemoryWatchers.Storyline.Current == 2060 && MemoryWatchers.MusicId.Current == 181; },
-            new Transition { Storyline = 2075, SpawnPoint = 0, Description = "Evrae to Guards"} },
-        {
-            () => { return MemoryWatchers.RoomNumber.Current == 205 && MemoryWatchers.Storyline.Current == 2075; },
-            GuardsTransition },
-        { 
-            () => { return MemoryWatchers.RoomNumber.Current == 205 && MemoryWatchers.Storyline.Current == 2080; }, 
-            GuardsTransition },
+        //{ 
+        //    () => { return MemoryWatchers.RoomNumber.Current == 205 && MemoryWatchers.Storyline.Current == 2060 && MemoryWatchers.MusicId.Current == 181; },
+        //    new Transition { Storyline = 2075, SpawnPoint = 0, Description = "Evrae to Guards"} },
+        //{
+        //    () => { return MemoryWatchers.RoomNumber.Current == 205 && MemoryWatchers.Storyline.Current == 2075; },
+        //    GuardsTransition },
+        //{ 
+        //    () => { return MemoryWatchers.RoomNumber.Current == 205 && MemoryWatchers.Storyline.Current == 2080; }, 
+        //    GuardsTransition },
         { 
             () => { return MemoryWatchers.RoomNumber.Current == 205 && MemoryWatchers.Storyline.Current == 2085; }, 
             new Transition { RoomNumber = 180, Storyline = 2135, Description = "Bevelle Guards to Trials"} },
@@ -975,6 +975,9 @@ static class Transitions
         { 
             () => { return MemoryWatchers.RoomNumber.Current == 279 && MemoryWatchers.Storyline.Current == 2420 && MemoryWatchers.MovementLock.Current == 48 && Math.Abs(MemoryWatchers.XCoordinate.Current - 265.377f) < 0.5f; },
             new Transition { RoomNumber = 259, Storyline = 2510, RoomNumberAlt = 266, SpawnPoint = 0, Description = "Yuna reflects"} },
+        {
+            () => { return MemoryWatchers.RoomNumber.Current == 266 && MemoryWatchers.Storyline.Current == 2420 && MemoryWatchers.State.Current == 0; },
+            new Transition {RoomNumber = 266, Storyline = 2420, Description = "Cavern Entrance", Suspendable = false, Repeatable = true} },
         {
             () => { return MemoryWatchers.RoomNumber.Current == 259 && MemoryWatchers.Storyline.Current == 2505; },
             new Transition {RoomNumber = 259, Storyline = 2510, Description = "You shall not pass!", Suspendable = false, Repeatable = true} },
