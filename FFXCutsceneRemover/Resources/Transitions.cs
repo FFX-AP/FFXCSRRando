@@ -313,9 +313,9 @@ static class Transitions
         {
             () => { return MemoryWatchers.RoomNumber.Current == 21 && MemoryWatchers.Storyline.Current == 216; },
             new Transition {ForceLoad = false, Description = "Post-Kimahri", /*FormationSwitch = Transition.formations.PostKimahri*/} },
-        {
-            () => { return MemoryWatchers.RoomNumber.Current == 19 && MemoryWatchers.Storyline.Current == 218 && MemoryWatchers.State.Current == 0; },
-            new Transition { RoomNumber = 301, Storyline = 220, /*FormationSwitch = Transition.formations.BoardingSSLiki, */Description = "S.S. Liki departs" } },
+        //{
+        //    () => { return MemoryWatchers.RoomNumber.Current == 19 && MemoryWatchers.Storyline.Current == 218 && MemoryWatchers.State.Current == 0; },
+        //    new Transition { RoomNumber = 301, Storyline = 220, /*FormationSwitch = Transition.formations.BoardingSSLiki, */Description = "S.S. Liki departs" } },
         // END OF BESAID
         // START OF SS LIKI
         {
