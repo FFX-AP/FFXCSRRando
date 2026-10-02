@@ -343,7 +343,7 @@ public static class MemoryWatchers
         BattleState = GetMemoryWatcher<short>(MemoryLocations.BattleState);
         BattleState2 = GetMemoryWatcher<short>(MemoryLocations.BattleState2);
         Input = GetMemoryWatcher<short>(MemoryLocations.Input);
-        Menu = GetMemoryWatcher<byte>(MemoryLocations.Menu);
+        Menu = GetMemoryWatcher<byte>(MemoryLocations.IsInTkMenuExecuteLoop);
         MenuLock = GetMemoryWatcher<byte>(MemoryLocations.MenuLock);
         Intro = GetMemoryWatcher<short>(MemoryLocations.Intro);
         State = GetMemoryWatcher<sbyte>(MemoryLocations.State);
@@ -601,14 +601,14 @@ public static class MemoryWatchers
         // Menu Values
         MenuTriggerValue = GetMemoryWatcher<int>(MemoryLocations.MenuTriggerValue);
 
-        MenuValue1 = GetMemoryWatcher<int>(MemoryLocations.MenuValue1);
+        MenuValue1 = GetMemoryWatcher<int>(MemoryLocations.TkMenuActiveMask);
         MenuValue2 = GetMemoryWatcher<int>(MemoryLocations.MenuValue2);
 
-        MenuValue3 = GetMemoryWatcher<int>(MemoryLocations.MenuValue3);
-        MenuValue4 = GetMemoryWatcher<int>(MemoryLocations.MenuValue4);
-        MenuValue5 = GetMemoryWatcher<byte>(MemoryLocations.MenuValue5);
-        MenuValue6 = GetMemoryWatcher<int>(MemoryLocations.MenuValue6);
-        MenuValue7 = GetMemoryWatcher<byte>(MemoryLocations.MenuValue7);
+        MenuValue3 = GetMemoryWatcher<int>(MemoryLocations.curMovieId);
+        MenuValue4 = GetMemoryWatcher<int>(MemoryLocations.gMoviePicture);
+        MenuValue5 = GetMemoryWatcher<byte>(MemoryLocations.PhyFMVPlayerManager_Value5);
+        MenuValue6 = GetMemoryWatcher<int>(MemoryLocations.PhyFMVPlayerManager_Value6);
+        MenuValue7 = GetMemoryWatcher<byte>(MemoryLocations.PhyreScene_Value7);
 
         SpeedBoostAmount = GetMemoryWatcher<int>(MemoryLocations.SpeedBoostAmount);
         SpeedBoostVar1 = GetMemoryWatcher<int>(MemoryLocations.SpeedBoostVar1);
