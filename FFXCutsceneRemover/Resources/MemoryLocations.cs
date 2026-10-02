@@ -18,9 +18,9 @@ static class MemoryLocations
     public static MemoryLocation BattleState2        = new MemoryLocation("BattleState2", 0xD2A8E0);
     public static MemoryLocation Input               = new MemoryLocation("Input", 0x8CB170);
     public static MemoryLocation IsInTkMenuExecuteLoop = new MemoryLocation("Menu", 0xF40824);
-    public static MemoryLocation MenuLock            = new MemoryLocation("MenuLock", 0xF25B61);
+    public static MemoryLocation MenuLock            = new MemoryLocation("MenuLock", 0xF25BA1);
     public static MemoryLocation Intro               = new MemoryLocation("Intro", 0x922D64);
-    public static MemoryLocation State               = new MemoryLocation("State", 0xD381CC);
+    public static MemoryLocation State               = new MemoryLocation("State", 0xD381EC);
     public static MemoryLocation XCoordinate         = new MemoryLocation("XCoordinate", 0xF25DC0);
     public static MemoryLocation YCoordinate         = new MemoryLocation("YCoordinate", 0xF25DB8);
     public static MemoryLocation Camera              = new MemoryLocation("Camera", 0xD381AC);
@@ -42,7 +42,7 @@ static class MemoryLocations
     public static MemoryLocation TargetFramerate     = new MemoryLocation("TargetFramerate", 0x830E88);
 
     public static MemoryLocation PlayerTurn           = new MemoryLocation("PlayerTurn", 0xF3F7BB);
-    public static MemoryLocation FrameCounterFromLoad = new MemoryLocation("FrameCounterFromLoad", 0xF25D54);
+    public static MemoryLocation FrameCounterFromLoad = new MemoryLocation("FrameCounterFromLoad", 0xF25D94);
 
     // Dialogue
     public static MemoryLocation Dialogue1           = new MemoryLocation("Dialogue1", 0xF25AC0);
@@ -52,7 +52,7 @@ static class MemoryLocations
     public static MemoryLocation HpEnemyA               = new MemoryLocation("HpEnemyA", 0xD34468, 0x5D0);
     public static MemoryLocation GuadoCount             = new MemoryLocation("GuadoCount", 0xF2FF14, 0x120);
     public static MemoryLocation NPCLastInteraction     = new MemoryLocation("NPCLastInteraction", 0xF26B28, 0x1E8);
-    public static MemoryLocation TidusActionCount       = new MemoryLocation("TidusActionCount", 0xD334CC, 0x6DF);
+    public static MemoryLocation TidusActionCount       = new MemoryLocation("TidusActionCount", 0xD334D4, 0x6DF);
     public static MemoryLocation TidusXCoordinate       = new MemoryLocation("TidusXCoordinate", 0x1FC44E4, 0x0C);
     public static MemoryLocation TidusYCoordinate       = new MemoryLocation("TidusYCoordinate", 0x1FC44E4, 0x10);
     public static MemoryLocation TidusZCoordinate       = new MemoryLocation("TidusZCoordinate", 0x1FC44E4, 0x14);
@@ -293,7 +293,7 @@ static class MemoryLocations
     public static MemoryLocation CharacterAPFlags = new MemoryLocation("CharacterAPFlags", 0x1F10EC4);
 
     // Menu Trigger
-    public static MemoryLocation MenuTriggerValue = new MemoryLocation("MenuTriggerValue", 0xEFBC80);
+    public static MemoryLocation MenuTriggerValue = new MemoryLocation("MenuTriggerValue", 0xEFBC38);
 
     // Menu Values - These are values which the game sets during the battle rewards menu which don't get cleaned out properly when we skip straight to the rewards screen.
     //               We set the values to 0x00000000 to clean these out after some skips
@@ -308,7 +308,7 @@ static class MemoryLocations
     public static MemoryLocation PhyreScene_Value7 = new MemoryLocation("MenuValue7", 0x8CB9D8, 0x10D2E);
 
     // Booster Values
-    public static MemoryLocation SpeedBoostAmount = new MemoryLocation("SpeedBoostAmount", 0x8E82A4);
+    public static MemoryLocation SpeedBoostAmount = new MemoryLocation("SpeedBoostAmount", 0x8E82B4);
     public static MemoryLocation SpeedBoostVar1   = new MemoryLocation("SpeedBoostVar1", 0x85A068);
 
     // Actor Model Positions
