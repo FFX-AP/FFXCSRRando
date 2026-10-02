@@ -20,7 +20,7 @@ static class MemoryLocations
     public static MemoryLocation IsInTkMenuExecuteLoop = new MemoryLocation("Menu", 0xF40824);
     public static MemoryLocation MenuLock            = new MemoryLocation("MenuLock", 0xF25B61);
     public static MemoryLocation Intro               = new MemoryLocation("Intro", 0x922D64);
-    public static MemoryLocation State               = new MemoryLocation("State", 0xD381AC);
+    public static MemoryLocation State               = new MemoryLocation("State", 0xD381CC);
     public static MemoryLocation XCoordinate         = new MemoryLocation("XCoordinate", 0xF25DC0);
     public static MemoryLocation YCoordinate         = new MemoryLocation("YCoordinate", 0xF25DB8);
     public static MemoryLocation Camera              = new MemoryLocation("Camera", 0xD381AC);
@@ -45,13 +45,13 @@ static class MemoryLocations
     public static MemoryLocation FrameCounterFromLoad = new MemoryLocation("FrameCounterFromLoad", 0xF25D54);
 
     // Dialogue
-    public static MemoryLocation Dialogue1           = new MemoryLocation("Dialogue1", 0xF25A80);
-    public static MemoryLocation DialogueBoxStructs  = new MemoryLocation("DialogueBoxStructs", 0x14676D0);
+    public static MemoryLocation Dialogue1           = new MemoryLocation("Dialogue1", 0xF25AC0);
+    public static MemoryLocation DialogueBoxStructs  = new MemoryLocation("DialogueBoxStructs", 0x1467710);
 
     // Deep Pointers
     public static MemoryLocation HpEnemyA               = new MemoryLocation("HpEnemyA", 0xD34468, 0x5D0);
     public static MemoryLocation GuadoCount             = new MemoryLocation("GuadoCount", 0xF2FF14, 0x120);
-    public static MemoryLocation NPCLastInteraction     = new MemoryLocation("NPCLastInteraction", 0xF26B68, 0x1E8);
+    public static MemoryLocation NPCLastInteraction     = new MemoryLocation("NPCLastInteraction", 0xF26B28, 0x1E8);
     public static MemoryLocation TidusActionCount       = new MemoryLocation("TidusActionCount", 0xD334CC, 0x6DF);
     public static MemoryLocation TidusXCoordinate       = new MemoryLocation("TidusXCoordinate", 0x1FC44E4, 0x0C);
     public static MemoryLocation TidusYCoordinate       = new MemoryLocation("TidusYCoordinate", 0x1FC44E4, 0x10);
@@ -163,9 +163,9 @@ static class MemoryLocations
     public static MemoryLocation EncounterFormationID2 = new MemoryLocation("EncounterFormationID2", 0xD2C259);
     public static MemoryLocation ScriptedBattleFlag1   = new MemoryLocation("ScriptedBattleFlag1", 0xD2A9D4); // Setting to 0 triggers a post battle rewards screen
     public static MemoryLocation ScriptedBattleFlag2   = new MemoryLocation("ScriptedBattleFlag2", 0xD2A9D5); // 0 = Screen crack effect, 1 = Boss transition effect
-    public static MemoryLocation ScriptedBattleVar1    = new MemoryLocation("ScriptedBattleVar1", 0xF26B08); // Set to the right value to make the game recognise battle as scripted and not random
-    public static MemoryLocation ScriptedBattleVar3    = new MemoryLocation("ScriptedBattleVar3", 0xF26B10); // Set at the start of a scripted battle
-    public static MemoryLocation ScriptedBattleVar4    = new MemoryLocation("ScriptedBattleVar4", 0xF26B14); // Set at the start of a scripted battle
+    public static MemoryLocation ScriptedBattleVar1    = new MemoryLocation("ScriptedBattleVar1", 0xF26B48); // Set to the right value to make the game recognise battle as scripted and not random
+    public static MemoryLocation ScriptedBattleVar3    = new MemoryLocation("ScriptedBattleVar3", 0xF26B50); // Set at the start of a scripted battle
+    public static MemoryLocation ScriptedBattleVar4    = new MemoryLocation("ScriptedBattleVar4", 0xF26B54); // Set at the start of a scripted battle
     public static MemoryLocation EncounterTrigger      = new MemoryLocation("EncounterTrigger", 0xD2A8E2); // Set to 2 to trigger boss encounter
 
     // Party Configuration
@@ -239,7 +239,7 @@ static class MemoryLocations
     // Special Flags
     public static MemoryLocation FangirlsOrKidsSkip     = new MemoryLocation("FangirlsOrKidsSkip", 0xD2CE7C);
     public static MemoryLocation BaajFlag1              = new MemoryLocation("BaajFlag1", 0xD2CE0C);
-    public static MemoryLocation BesaidFlag1            = new MemoryLocation("BesaidFlag1", 0xF25AB3);
+    public static MemoryLocation BesaidFlag1            = new MemoryLocation("BesaidFlag1", 0xF25AF3);
     public static MemoryLocation SSWinnoFlag1           = new MemoryLocation("SSWinnoFlag1", 0xD2CE7D);
     public static MemoryLocation KilikaMapFlag          = new MemoryLocation("KilikaMapFlag", 0xD2CE7E);
     public static MemoryLocation SSWinnoFlag2           = new MemoryLocation("SSWinnoFlag2", 0xD2CE7F);
@@ -277,7 +277,7 @@ static class MemoryLocations
 
     // Battle Rewards
     public static MemoryLocation GilBattleRewards       = new MemoryLocation("GilBattleRewards", 0x1F10F6C);
-    public static MemoryLocation GilRewardCounter       = new MemoryLocation("GilRewardCounter", 0x1469ED4);
+    public static MemoryLocation GilRewardCounter       = new MemoryLocation("GilRewardCounter", 0x1469F14);
     public static MemoryLocation BattleRewardItemCount  = new MemoryLocation("BattleRewardItemCount", 0x1F10F70);
     public static MemoryLocation BattleRewardItem1      = new MemoryLocation("BattleRewardItem1", 0x1F10F74);
     public static MemoryLocation BattleRewardItemQty1   = new MemoryLocation("BattleRewardItemQty1", 0x1F10F84);
@@ -293,7 +293,7 @@ static class MemoryLocations
     public static MemoryLocation CharacterAPFlags = new MemoryLocation("CharacterAPFlags", 0x1F10EC4);
 
     // Menu Trigger
-    public static MemoryLocation MenuTriggerValue = new MemoryLocation("MenuTriggerValue", 0xEFBC38);
+    public static MemoryLocation MenuTriggerValue = new MemoryLocation("MenuTriggerValue", 0xEFBC80);
 
     // Menu Values - These are values which the game sets during the battle rewards menu which don't get cleaned out properly when we skip straight to the rewards screen.
     //               We set the values to 0x00000000 to clean these out after some skips
