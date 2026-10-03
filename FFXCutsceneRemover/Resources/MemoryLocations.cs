@@ -20,7 +20,7 @@ static class MemoryLocations
     public static MemoryLocation IsInTkMenuExecuteLoop = new MemoryLocation("Menu", 0xF40824);
     public static MemoryLocation MenuLock            = new MemoryLocation("MenuLock", 0xF25BA1);
     public static MemoryLocation Intro               = new MemoryLocation("Intro", 0x922D64);
-    public static MemoryLocation State               = new MemoryLocation("State", 0xD381EC);
+    public static MemoryLocation State               = new MemoryLocation("State", 0xD381CC);
     public static MemoryLocation XCoordinate         = new MemoryLocation("XCoordinate", 0xF25DC0);
     public static MemoryLocation YCoordinate         = new MemoryLocation("YCoordinate", 0xF25DB8);
     public static MemoryLocation Camera              = new MemoryLocation("Camera", 0xD381AC);
