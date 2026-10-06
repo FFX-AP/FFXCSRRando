@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Linq;
 
 using FFXCutsceneRemover.ComponentUtil;
-using FFXCutsceneRemover.Logging;
 
 namespace FFXCutsceneRemover;
 
@@ -37,8 +36,8 @@ class FarplaneTransition : Transition
             IntPtr EquipMenu = new IntPtr(baseAddress + 0xD30F2C); // Address of beginning of Equipment menu
             bool foundBrotherhood = false;
             var brotherhood = new byte[2] { 0x1, 0x50 }; // Brotherhood name identifier in hex
-            
-            int weaponBinaryAddress = process.ReadValue<int>(baseAddress + 0xD35FF4);
+
+            int weaponBinaryAddress = process.ReadValue<int>(baseAddress + 0xD35FFC);
             byte[] brotherhoodAbilityBytes = process.ReadBytes(weaponBinaryAddress + 0x2C, 8);
 
             while (!foundBrotherhood)
