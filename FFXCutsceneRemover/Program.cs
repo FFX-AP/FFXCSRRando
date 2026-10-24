@@ -338,8 +338,8 @@ public class Program
 
     // Cutscene Remover Version Number, 0x30 - 0x39 = 0 - 9, 0x48 = decimal point
     private const int majorID = 1;
-    private const int minorID = 7;
-    private const int patchID = 8;
+    private const int minorID = 8;
+    private const int patchID = 0;
     private static List<(string, byte)> startGameText;
 
     static Mutex mutex = new Mutex(true, "CSR");
